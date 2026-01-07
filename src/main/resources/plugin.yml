@@ -1,0 +1,4 @@
+name: HackModule
+version: '1.0-SNAPSHOT'
+main: nl.hackModule.HackModule
+api-version: '1.21'
