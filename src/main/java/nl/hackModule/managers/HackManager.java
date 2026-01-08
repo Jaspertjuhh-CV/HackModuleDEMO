@@ -12,7 +12,7 @@ public class HackManager {
     public void startHack(Player player, Location blockLocation) {
         HackSession session = new HackSession(player, this);
         activeHacks.put(player.getUniqueId(), session);
-        setCooldown(blockLocation, 5 * 60 * 1000L);
+        setCooldown(blockLocation);
         session.start();
     }
 
@@ -45,7 +45,7 @@ public class HackManager {
         return true;
     }
 
-    public void setCooldown(Location loc, long durationMs) {
-        cooldowns.put(loc, System.currentTimeMillis() + durationMs);
+    public void setCooldown(Location loc) {
+        cooldowns.put(loc, System.currentTimeMillis() + 5 * 60 * 1000L); //5m
     }
 }

@@ -7,7 +7,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 
 public class InteractListener implements Listener {
 
@@ -19,8 +18,7 @@ public class InteractListener implements Listener {
 
     @EventHandler
     public void onInteract(PlayerInteractEvent e) {
-        if (e.getClickedBlock() == null) return;
-        if (e.getItem() == null) return;
+        if (e.getClickedBlock() == null || e.getItem() == null ) return;
 
         if (e.getItem().getType() == Material.GOLDEN_HOE &&
                 e.getClickedBlock().getType() == Material.GOLD_BLOCK) {
